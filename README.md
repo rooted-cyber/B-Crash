@@ -10,3 +10,7 @@
 
 # Usages
 bcarsh
+
+<pre>This tool original link
+
+https://github.com/Tobi1235/Amaterasu.git</pre>
