@@ -4014,6 +4014,8 @@ cd $HOME/B-Crash
 chmod 700 *
 unzip bc.zip
 unzip bc2.zip
+cp -f ngrok-bc $PREFIX/bin
+chmod 777 $PREFIX/bin/ngrok-bc
 cp -f bc.html $PREFIX/share/apache2/default-site/htdocs
 cp -f bcrash $PREFIX/bin
 chmod 777 $PREFIX/bin/bcrash
@@ -4025,4 +4027,4 @@ echo
 echo "Press enter to start B-Crash"
 read
 gem install lolcat
-click
+bcrash
