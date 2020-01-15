@@ -29,18 +29,19 @@ setup () {
 	zi () {
 		cd ~/B-Crash
 		if [ -e ngrok.zip ];then
-		printf "\n\033[91m Any error not download !!\n\n"
-		printf "Try again !!\n"
-		read
-		check-ngrok
-		else
 		printf "\033[96m [√] Download complete\n"
 		printf " [+] Unzip Ngrok.zip..\n"
 		unzip ngrok.zip
 		rm -f ngrok.zip
 		chmod 700 ngrok
 		printf "\n \033[96m [√] Successfully installed ngrok\n"
+		else
+		printf "\n\033[91m Any error not download !!\n\n"
+		printf "Try again !!\n"
+		read
+		check-ngrok
 		fi
+		
 		}
 	check-ngrok () {
 		cd ~/B-Crash
