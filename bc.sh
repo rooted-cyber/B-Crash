@@ -9,10 +9,10 @@ banner() {
 c="toilet -f term -F gay"
 toilet -f mono12 -F metal B-Crash
 
-printf " \e[1;96m v 2.0 Created by https://github.com/thelinuxchoice\e[0m \n"|lolcat --animate
+printf " \e[1;96m v 2.0 helping by https://github.com/thelinuxchoice\e[0m \n"|toilet -f term -F gay
 echo
 random
-printf "     		This Tool Edited By Maruf \n"
+printf "     		This Tool created By Maruf \n"
 printf "\n"
 }
 

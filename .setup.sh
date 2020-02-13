@@ -25,7 +25,7 @@ fol () {
 		printf "\n\033[92m [√] Successfully unzip .a.zip\n"
 		sleep 2
 		else
-		printf "\n\033[92m [+] Now unzipping .a.zip\n"
+		printf "\n\n\033[96m [+] Now unzipping .a.zip\n\n"
 		sleep 2
 		unzip .a.zip
 		unzip-file
@@ -34,9 +34,9 @@ fol () {
 	check-zip () {
 		fol
 		if [ -e ngrok ];then
-		printf "\n Successfully Ngrok unziped\n"
+		printf "\n\033[95m Successfully Ngrok unziped\n"
 		else
-		printf "\n Not unzipped\n"
+		printf "\n\n\033[93m Not unzipped\n"
 		printf "\n [+] Unziping ngrok.zip\n"
 		sleep 2
 		unzip ngrok.zip
@@ -52,7 +52,7 @@ ngrok-install () {
 	printf "[+] Now Checking...\n"
 	check-zip
 	else
-	printf "\n\033[92m [+] Downloading ngrok.zip....\n"
+	printf "\n\033[92m [+] Downloading ngrok.zip....\n\n\033[0m"
 	wget https://github.com/rooted-cyber/upload/raw/master/ngrok.zip
 	sleep 1
 	check-zip
@@ -69,8 +69,6 @@ ins () {
 	apt install curl
 	pip install lolcat
 	ngrok-install
-	sleep 1
-	check-ngrok
 	sleep 1
 	unzip-file
 	sleep 1
