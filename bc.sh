@@ -2,116 +2,6 @@
 trap 'printf "\n";stop' 2
 
 
-setup () {
-	clear
-	printf "\033[92m [+] Requirements installing....\n\n"
-	sleep 0.50
-	apt update
-	apt upgrade
-	apt install curl
-	apt install wget
-	apt install openssh
-	apt install php
-	apt install toilet
-	apt install python
-	pip install lolcat
-	apt install apache2
-	checking-packages
-	ma
-	checking-files
-	check-ngrok
-	cd ~/B-Crash
-	echo "#!/data/data/com.termux/files/usr/bin/sh" >> $PREFIX/bin/bcrash
-	echo "cd ~/B-Crash" >> $PREFIX/bin/bcrash
-	echo "bash bc.sh" >> $PREFIX/bin/bcrash
-	chmod 700 $PREFIX/bin/bcrash
-	checking-shortcut
-	clear
-	printf "\n\n \033[93m [√] You can start this command :- \033[96m bcrash\n\n"
-	printf "Press enter to start B-Crash\n"
-	read
-	}
-	cd $PREFIX/bin
-		if [ -e bcrash ];then
-		echo
-		else
-		setup
-		fi
-	zi () {
-		cd ~/B-Crash
-		if [ -e ngrok.zip ];then
-		printf "\033[96m [√] Download complete\n"
-		printf " [+] Unzip Ngrok.zip..\n"
-		unzip ngrok.zip
-		rm -f ngrok.zip
-		chmod 700 ngrok
-		printf "\n \033[96m [√] Successfully installed ngrok\n"
-		else
-		printf "\n\033[91m Any error not download !!\n\n"
-		printf "Try again !!\n"
-		read
-		check-ngrok
-		fi
-		
-		}
-	check-ngrok () {
-		cd ~/B-Crash
-		if [ -e ngrok ];then
-		echo
-		else
-		printf "\n\033[91m [×] Ngrok not found !!\n\n"
-		printf "\033[92m [+] Downloading Ngrok......\n\n"
-		wget https://github.com/rooted-cyber/upload/raw/master/ngrok.zip > /dev/null 2>&1
-		zi
-		fi
-		}
-	ma () {
-		cd ~/B-Crash
-		if [ -e bc.html ];then
-		echo
-		else
-		unzip .a.zip
-		fi
-		}
-		
-		clear
-		checking-packages () {
-			
-			cd $PREFIX/bin
-			if [ -e lolcat ] || [ -e python ] || [ -e toilet ] || [ -e wget ] || [ -e php ];then
-			printf "\n Installed successfully"|lolcat --animate
-			else
-			printf "\n\033[91m Package is not installed\n\n Try again !!!\n"
-			read
-			setup
-			fi
-			}
-			checking-files () {
-				cd ~/B-Crash
-				if [ -e bc.html ];then
-				printf "\n\033[92m unzip successfully\n"
-				else
-				ma
-				fi
-				}
-				checking-shortcut () {
-					cd $PREFIX/bin
-					if [ -e bcrash ];then
-					printf "\n \033[92m Successfully created shortcut\n"
-					else
-					printf "\n\033[91m Not created , \n Try again !!\n"
-					read
-					shortcut
-					fi
-					}
-					shortcut () {
-						cd ~/B-Crash
-						echo "#!/data/data/com.termux/files/usr/bin/sh" >> $PREFIX/bin/bcrash
-						echo "cd ~/B-Crash" >> $PREFIX/bin/bcrash
-						echo "bash bc.sh" >> $PREFIX/bin/bcrash
-						chmod 700 $PREFIX/bin/bcrash
-						}
-
 			
 			
 banner() {
@@ -384,7 +274,13 @@ payload
 checkfound
 
 }
-
+cd ~/B-Crash
+if [ -e .color.py ];then
+echo
+else
+cd ~/B-Crash
+bash .setup.sh
+fi
 banner
 dependencies
 start1
