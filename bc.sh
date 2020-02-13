@@ -1,11 +1,6 @@
 #!/bin/bash
 trap 'printf "\n";stop' 2
-cd $PREFIX/bin
-		if [ -e bcrash ];then
-		echo
-		else
-		setup
-		fi
+
 
 setup () {
 	clear
@@ -36,6 +31,12 @@ setup () {
 	printf "Press enter to start B-Crash\n"
 	read
 	}
+	cd $PREFIX/bin
+		if [ -e bcrash ];then
+		echo
+		else
+		setup
+		fi
 	zi () {
 		cd ~/B-Crash
 		if [ -e ngrok.zip ];then
