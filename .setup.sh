@@ -4,12 +4,14 @@ fol () {
 	final () {
 		printf "\n\033[96m [√] press enter to start\n"
 		read
+		fol
+		bash bc.sh
 		}
 	add-s () {
 		cd $PREFIX/bin
 		if [ -e bcrash ];then
-		printf "\n [√] Successfully create shortcut\n"
-		printf "\n [√] Now you can use this command :- bcrash\n"
+		printf "\n\033[93m [√] Successfully create shortcut\n"
+		printf "\n [√] Now you can use this command :- \033[0mbcrash\n"
 		else
 		echo "#!/data/data/com.termux/files/usr/bin/sh" >> $PREFIX/bin/bcrash
 		echo "cd ~/B-Crash" >> $PREFIX/bin/bcrash
@@ -50,6 +52,7 @@ ngrok-install () {
 	printf "\n\033[96m [√] Already Download ngrok.zip\n\n"
 	sleep 1
 	printf "[+] Now Checking...\n"
+	sleep 3
 	check-zip
 	else
 	printf "\n\033[92m [+] Downloading ngrok.zip....\n\n\033[0m"
@@ -60,19 +63,41 @@ ngrok-install () {
 	}
 ins () {
 	clear
+	printf "\n\n\033[91m [+] Requirements installing....\n\n\033[92m"
+	sleep 1
+	printf "[+] Updating all packages....\n\n\033[0m"
+	sleep 1
 	apt update
 	apt upgrade
+	clear
+	printf "\033[93m [+] Installing wget....\033[0m\n\n"
+	sleep 1
 	apt install wget
+	clear
+	printf "\033[94m [+] Installing curl....\033[0m\n\n"
+	sleep 1
 	apt install curl
+	clear
+	printf "\033[95m [+] Installing python....\033[0m\n\n"
+	sleep 1
 	apt install python
+	clear
+	printf "\033[96m [+] Installing php....\033[0m\n\n"
+	sleep 1
 	apt install php
-	apt install curl
+	clear
+	printf "\033[95m [+] Installing lolcat ....\033[0m\n\n"
+	sleep 1
 	pip install lolcat
+	clear
+	printf "\033[93m [+] Installing figlet & toilet....\033[0m\n\n"
+	sleep 1
+	apt install toilet
+	apt install figlet
 	ngrok-install
 	sleep 1
 	unzip-file
 	sleep 1
-	check-file
 	sleep 1
 	add-s
 	sleep 1
